@@ -1,2 +1,11 @@
-# cypress-issues
-A repository of branches for reproducing Cypress issues.
+# cypress-[issue]
+
+```shell
+npm run cypress-run
+```
+
+or
+
+```shell
+npm run cypress-open
+```

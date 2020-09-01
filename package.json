@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "cypress-[issue]",
+  "version": "0.0.0",
+  "scripts": {
+    "cypress-open": "node start.js open",
+    "cypress-run": "node start.js run"
+  },
+  "dependencies": {
+    "cypress": "4.12.1",
+    "execa": "^4.0.3",
+    "json-server": "0.16.1"
+  }
+}
