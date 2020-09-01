@@ -3,7 +3,7 @@ const execa = require('execa');
 
 const mode = process.argv[2];
 
-execa('json-server', ['server/rest.json'])
+execa('json-server', ['server/rest.json', '--middleware=server/middlewares.js'])
   .catch(({ message }) => {
     console.error(message);
     process.exit(1);

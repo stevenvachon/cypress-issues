@@ -38,7 +38,12 @@ Instructions:
   select.addEventListener('change', ({ target }) => {
     select.disabled = true;
 
-    fetch(`/api/${target.value}`)
+    const headers = {
+      'accept': 'application/json, text/plain, */*',
+      'x-grafana-org-id': '1'
+    };
+
+    fetch(`/api/${target.value}`, {headers})
       .then(response => response.json())
       .then(data => JSON.stringify(data)) // reformat
       .then(text => renderedData.innerText = text)
