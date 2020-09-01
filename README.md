@@ -1,4 +1,4 @@
-# cypress-[issue]
+# cypress-request-issue
 
 ```shell
 npm run cypress-run

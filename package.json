@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "cypress-[issue]",
+  "name": "cypress-request-issue",
   "version": "0.0.0",
   "scripts": {
     "cypress-open": "node start.js open",

@@ -12,5 +12,40 @@ code {font-family: monospace}
 
 <noscript><strong>JavaScript is required</strong></noscript>
 
+Instructions:
+<ol>
+  <li>Select "1" and the rendered data will be <code>{"id":1}</code></li>
+  <li>Select "2" and the rendered data will be <code>{"id":2}</code></li>
+</ol>
+
+<p>The above is true for any browser, but not for Cypress.</p>
+
+<fieldset>
+  <select>
+    <option selected disabled>Select a value</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+
+  <p>Rendered data from server: <code id="renderedData"></code></p>
+</fieldset>
+
+<script>
+(() => {
+  const renderedData = document.querySelector('#renderedData');
+  const select = document.querySelector('select');
+
+  select.addEventListener('change', ({ target }) => {
+    select.disabled = true;
+
+    fetch(`/api/${target.value}`)
+      .then(response => response.json())
+      .then(data => JSON.stringify(data)) // reformat
+      .then(text => renderedData.innerText = text)
+      .then(() => select.disabled = false);
+  });
+})();
+</script>
+
 </body>
 </html>
